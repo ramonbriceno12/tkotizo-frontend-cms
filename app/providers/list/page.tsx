@@ -14,7 +14,7 @@ export default function Providers() {
     // Fetch providers from the API
     async function fetchProviders() {
         try {
-            const response = await fetch('http://localhost:5000/api/providers');
+            const response = await fetch('http://34.219.34.28:5000/api/providers');
             if (!response.ok) {
                 throw new Error(`An error occurred: ${response.statusText}`);
             }

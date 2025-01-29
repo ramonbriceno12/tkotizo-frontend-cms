@@ -14,7 +14,7 @@ export default function Commissions() {
     // Fetch commissions from the API
     async function fetchCommissions() {
         try {
-            const response = await fetch('http://localhost:5000/api/commissions');
+            const response = await fetch('http://34.219.34.28:5000/api/commissions');
             if (!response.ok) {
                 throw new Error(`An error occurred: ${response.statusText}`);
             }

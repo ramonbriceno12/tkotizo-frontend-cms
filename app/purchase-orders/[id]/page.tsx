@@ -15,7 +15,7 @@ export default function PurchaseOrderDetails({ params }: { params: Promise<{ id:
         async function fetchPurchaseOrderDetails() {
             try {
                 console.log(`Fetching purchase order details with ID: ${id}`);
-                const purchaseOrderResponse = await fetch(`http://localhost:5000/api/purchase-orders/${id}`);
+                const purchaseOrderResponse = await fetch(`http://34.219.34.28:5000/api/purchase-orders/${id}`);
                 if (!purchaseOrderResponse.ok) {
                     const purchaseOrderError = await purchaseOrderResponse.text();
                     throw new Error(`Failed to fetch purchase order. Status: ${purchaseOrderResponse.status}. Message: ${purchaseOrderError}`);

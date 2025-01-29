@@ -13,7 +13,7 @@ export default function Invoices() {
     // Fetch invoices
     async function fetchInvoices() {
         try {
-            const response = await fetch('http://localhost:5000/api/invoices');
+            const response = await fetch('http://34.219.34.28:5000/api/invoices');
             if (!response.ok) {
                 throw new Error(`An error occurred: ${response.statusText}`);
             }
@@ -32,7 +32,7 @@ export default function Invoices() {
     // Approve invoice
     async function approveInvoice(id: number) {
         try {
-            const response = await fetch(`http://localhost:5000/api/invoices/${id}/approve`, {
+            const response = await fetch(`http://34.219.34.28:5000/api/invoices/${id}/approve`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -69,7 +69,7 @@ export default function Invoices() {
     // Function to handle the form submission
     async function handleUpdateInvoice(amount, selectedInvoiceId) {
         try {
-            const response = await fetch(`http://localhost:5000/api/invoices/${selectedInvoiceId}/update-amount`, {
+            const response = await fetch(`http://34.219.34.28:5000/api/invoices/${selectedInvoiceId}/update-amount`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -90,7 +90,7 @@ export default function Invoices() {
 
     async function cancelInvoice(id: number) {
         try {
-            const response = await fetch(`http://localhost:5000/api/invoices/${id}/cancel`, {
+            const response = await fetch(`http://34.219.34.28:5000/api/invoices/${id}/cancel`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

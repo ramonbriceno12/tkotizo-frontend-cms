@@ -16,7 +16,7 @@ export default function ProviderDetails({ params }: { params: Promise<{ id: stri
         async function fetchProviderDetails() {
             try {
                 console.log(`Fetching provider details with ID: ${id}`);
-                const providerResponse = await fetch(`http://localhost:5000/api/providers/${id}`);
+                const providerResponse = await fetch(`http://34.219.34.28:5000/api/providers/${id}`);
                 if (!providerResponse.ok) {
                     const providerError = await providerResponse.text();
                     throw new Error(`Failed to fetch provider. Status: ${providerResponse.status}. Message: ${providerError}`);
@@ -25,7 +25,7 @@ export default function ProviderDetails({ params }: { params: Promise<{ id: stri
                 setProvider(providerData);
 
                 console.log(`Fetching estimates for provider ID: ${id}`);
-                const estimatesResponse = await fetch(`http://localhost:5000/api/provider-estimates/provider/${id}`);
+                const estimatesResponse = await fetch(`http://34.219.34.28:5000/api/provider-estimates/provider/${id}`);
                 if (!estimatesResponse.ok) {
                     const estimatesError = await estimatesResponse.text();
                     throw new Error(`Failed to fetch estimates. Status: ${estimatesResponse.status}. Message: ${estimatesError}`);

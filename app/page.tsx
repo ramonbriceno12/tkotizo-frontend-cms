@@ -67,7 +67,7 @@ const Dashboard = () => {
   useEffect(() => {
     const fetchBarChartData = async () => {
       try {
-        const response = await fetch('http://localhost:5000/api/invoices/bar-chart');
+        const response = await fetch('http://34.219.34.28:5000/api/invoices/bar-chart');
         const data = await response.json();
 
         // Set the fetched data into the bar chart state
@@ -87,7 +87,7 @@ const Dashboard = () => {
     };
 
     const fetchRevenueData = async () => {
-      const response = await fetch('http://localhost:5000/api/invoices/line-chart');
+      const response = await fetch('http://34.219.34.28:5000/api/invoices/line-chart');
       const data = await response.json();
 
       // Set the fetched data into the line chart state
@@ -105,7 +105,7 @@ const Dashboard = () => {
     };
 
     const fetchPurchaseOrders = async () => {
-      const response = await fetch('http://localhost:5000/api/purchase-orders');
+      const response = await fetch('http://34.219.34.28:5000/api/purchase-orders');
       const data = await response.json();
       setPurchaseOrders(data.purchaseOrders);
     };

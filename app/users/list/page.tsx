@@ -18,7 +18,7 @@ export default function Users() {
 
     async function fetchUsers() {
         try {
-            const response = await fetch('http://localhost:5000/api/users/');
+            const response = await fetch('http://34.219.34.28:5000/api/users/');
             if (!response.ok) {
                 throw new Error(`An error occurred: ${response.statusText}`);
             }
@@ -73,7 +73,7 @@ export default function Users() {
             else
                 formData.append("amount", 0); // Default amount to 0 if not provided
 
-            const response = await fetch('http://localhost:5000/api/purchase-orders', {
+            const response = await fetch('http://34.219.34.28:5000/api/purchase-orders', {
                 method: 'POST',
                 body: formData,
             });
@@ -97,7 +97,7 @@ export default function Users() {
 
     async function handleDeactivateUser(userId: number) {
         try {
-            const response = await fetch(`http://localhost:5000/api/users/${userId}/deactivate`, {
+            const response = await fetch(`http://34.219.34.28:5000/api/users/${userId}/deactivate`, {
                 method: 'PUT', // Use PUT or POST as appropriate
                 headers: {
                     'Content-Type': 'application/json',
@@ -121,7 +121,7 @@ export default function Users() {
 
     async function handleActivateUser(userId: number) {
         try {
-            const response = await fetch(`http://localhost:5000/api/users/${userId}/activate`, {
+            const response = await fetch(`http://34.219.34.28:5000/api/users/${userId}/activate`, {
                 method: 'PUT', // Use PUT or POST as appropriate
                 headers: {
                     'Content-Type': 'application/json',

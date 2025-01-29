@@ -20,7 +20,7 @@ export default function PurchaseOrders() {
     // Fetch purchase orders
     async function fetchPurchaseOrders() {
         try {
-            const response = await fetch('http://localhost:5000/api/purchase-orders');
+            const response = await fetch('http://34.219.34.28:5000/api/purchase-orders');
             if (!response.ok) {
                 throw new Error(`An error occurred: ${response.statusText}`);
             }
@@ -34,7 +34,7 @@ export default function PurchaseOrders() {
 
     async function fetchProviders() {
         try {
-            const response = await fetch('http://localhost:5000/api/providers/');
+            const response = await fetch('http://34.219.34.28:5000/api/providers/');
             if (!response.ok) {
                 throw new Error(`Failed to fetch providers: ${response.statusText}`);
             }
@@ -55,7 +55,7 @@ export default function PurchaseOrders() {
     // Approve purchase order
     async function approveOrder(id) {
         try {
-            const response = await fetch(`http://localhost:5000/api/purchase-orders/${id}/approve`, {
+            const response = await fetch(`http://34.219.34.28:5000/api/purchase-orders/${id}/approve`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -103,7 +103,7 @@ export default function PurchaseOrders() {
         setWaitingResponse(true);
 
         try {
-            const response = await fetch(`http://localhost:5000/api/purchase-orders/${selectedPurchaseOrderId}/update-amount`, {
+            const response = await fetch(`http://34.219.34.28:5000/api/purchase-orders/${selectedPurchaseOrderId}/update-amount`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -128,7 +128,7 @@ export default function PurchaseOrders() {
         setWaitingResponse(true);
         setIsModalProviderOpen(false); // Close the modal
         try {
-            const response = await fetch(`http://localhost:5000/api/purchase-orders/${selectedPurchaseOrderId}/send-to-provider`, {
+            const response = await fetch(`http://34.219.34.28:5000/api/purchase-orders/${selectedPurchaseOrderId}/send-to-provider`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -152,7 +152,7 @@ export default function PurchaseOrders() {
 
     async function cancelOrder(id) {
         try {
-            const response = await fetch(`http://localhost:5000/api/purchase-orders/${id}/cancel`, {
+            const response = await fetch(`http://34.219.34.28:5000/api/purchase-orders/${id}/cancel`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',

@@ -8,7 +8,7 @@ export default function useAuth() {
   
     async function fetchUser() {
       try {
-        const response = await fetch('http://localhost:5000/api/auth/me', {
+        const response = await fetch('http://34.219.34.28:5000/api/auth/me', {
           credentials: 'include',
         });
         if (!response.ok) {
@@ -32,7 +32,7 @@ export default function useAuth() {
   
     const login = async (email: string, password: string) => {
       try {
-        const response = await fetch('http://localhost:5000/api/auth/login', {
+        const response = await fetch('http://34.219.34.28:5000/api/auth/login', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password }),
@@ -52,7 +52,7 @@ export default function useAuth() {
   
     const logout = async () => {
       try {
-        await fetch('http://localhost:5000/api/auth/logout', {
+        await fetch('http://34.219.34.28:5000/api/auth/logout', {
           method: 'POST',
           credentials: 'include',
         });
